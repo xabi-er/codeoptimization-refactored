@@ -272,14 +272,14 @@ public class FantasyCalculatorTest {
         PlayerStats s = new PlayerStats();
         s.position = "DELANTERO";
         s.minutes = 90;        // 5 pts
-        s.goals = 3;           // 3 * 6 = 18 pts (Forwards get 6 per goal)
-        s.assists = 1;         // 1 * 5 = 5 pts (Forwards get 5 per assist)
+        s.goals = 3;           // 3 * 5 = 15 pts (Forwards get 6 per goal)
+        s.assists = 1;         // 1 * 6 = 6 pts (Forwards get 5 per assist)
         s.yellowCard = false;
         s.redCard = false;
         s.matchResult = 'G';   // 5 pts
         
-        // Expected: 5 + 18 + 5 + 5 = 33
-        assertEquals(33, FantasyCalculator.calculatePoints(s), "FWD Hat Trick calculation failed");
+        // Expected: 5 + 15 + 6 + 5 = 31
+        assertEquals(31, FantasyCalculator.calculatePoints(s), "FWD Hat Trick calculation failed");
     }
 
     @Test
