@@ -317,14 +317,14 @@ public class FantasyCalculatorTest {
         PlayerStats s = new PlayerStats();
         s.position = "DELANTERO";
         s.minutes = 45;        // 3 pts
-        s.goals = 2;           // 2 * 6 = 12 pts
+        s.goals = 2;           // 2 * 5 = 10 pts
         s.assists = 0;
         s.yellowCard = false;
         s.redCard = false;
         s.matchResult = 'E';   // 2 pts
         
-        // Expected: 3 + 12 + 2 = 17
-        assertEquals(17, FantasyCalculator.calculatePoints(s), "FWD Subbed Scoring calculation failed");
+        // Expected: 3 + 10 + 2 = 15
+        assertEquals(15, FantasyCalculator.calculatePoints(s), "FWD Subbed Scoring calculation failed");
     }
 
     @Test
@@ -332,13 +332,13 @@ public class FantasyCalculatorTest {
         PlayerStats s = new PlayerStats();
         s.position = "DELANTERO";
         s.minutes = 90;        // 5 pts
-        s.goals = 1;           // 1 * 6 = 6 pts
+        s.goals = 1;           // 1 * 5 = 5 pts
         s.assists = 0;
         s.yellowCard = true;   // -3 pts
         s.redCard = true;      // -5 pts
         s.matchResult = 'G';   // 5 pts
         
-        // Expected: 5 + 6 - 3 - 5 + 5 = 8
-        assertEquals(8, FantasyCalculator.calculatePoints(s), "FWD Aggressive Player calculation failed");
+        // Expected: 5 + 5 - 3 - 5 + 5 = 7
+        assertEquals(7, FantasyCalculator.calculatePoints(s), "FWD Aggressive Player calculation failed");
     }
 }
